@@ -1,0 +1,86 @@
+// .header-container{
+
+// }
+.header-sub-container {
+    display: flex;
+    background-color: white;
+    padding: 20px 0px;
+    border: 1px gray solid;
+    border-top-right-radius: 20px;
+
+    .dashboard-left-icon {
+        margin: 6px 0px 6px 40px;
+        background-color: #9980ec6b;
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 2px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding-left: 80px;
+        font-size: 16px;
+        font-family: sans-serif;
+
+        .dashboard-title {
+            margin-top: 10px;
+        }
+
+        .title,
+        .sub-title {
+            color: #490449;
+            font-weight: bold;
+        }
+
+        svg {
+            margin-bottom: -4px;
+            font-size: 20px;
+            color: #340234;
+            padding: 0px 4px;
+
+        }
+    }
+}
+
+
+.modal {
+    font-size: 12px;
+    background-color: #340234;
+    color: white;
+    position: absolute;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    text-align: center;
+    // padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #cd2222;;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }

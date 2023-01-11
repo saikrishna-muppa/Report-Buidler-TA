@@ -1,0 +1,31 @@
+.menu-icons{
+    width: 60px;
+    margin: 40px 0px;
+    color: white;
+    svg{
+        font-size: 26px;
+        &:hover{
+            padding: 10px;
+            background-color: #9980ec6b;
+            border-radius: 4px;
+        }
+    }
+}
+.avatar{
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+   
+}
+.close-icon{
+    width: 60px;
+    margin: 40px 0px;
+    color: white;
+    svg{
+        font-size: 26px;
+        
+    }
+}
+

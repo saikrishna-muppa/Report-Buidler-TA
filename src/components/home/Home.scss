@@ -1,0 +1,97 @@
+
+
+.container {
+    // background-color: #bf06ed;
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    .sub-container{
+        padding: 6px 10px 0px 0px;
+        background-color: #4646e1;
+        display: flex;
+        width: 100%;
+    }
+}
+
+.container-menu-left {
+    background-color: #54078F;
+    width: 4%;
+    border-top-left-radius: 15px;
+    min-height:100vh;
+}
+
+.container-menu-right {
+    // background-color: #bebaba;
+    width: 96%;
+    .dropdown-container {
+        width: 24%;
+        background-color: white;
+        padding: 16px;
+    }
+
+    .canavs-cantainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 50%;
+        background-color: #ebe5e5;
+        overflow: scroll;
+        .tab-details{
+            width: 35%;
+            background: white;
+            border: none;
+            // min-height: 100px;
+            // max-height: 300px;
+            .edit-icon{
+                position: relative;
+                display: block;
+                float: right;
+                color: #54078F;
+                font-size: 20px;
+                .modal{
+                  position: absolute;
+                }
+                svg {
+                    margin-top: 2px;
+                }
+            }
+        }
+        
+    }
+
+    .tab-container {
+        width: 26%;
+        background-color: white;
+        .tab-details{
+            svg{
+                color: #54078F;
+                float: left;
+                margin-left: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.tab-details {
+    // width: 80%;
+    color: black;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+    .tab {
+        margin: 10px;
+        .edit-icon{
+            display: none;
+        }
+        
+        
+    }
+    .pop-up{
+        position: absolute;
+    }
+}
