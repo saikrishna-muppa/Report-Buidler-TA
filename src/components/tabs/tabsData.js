@@ -31,7 +31,8 @@ const data=[{
    // "type":"dropdown",
    "options":["Type(or)Select","A","B","C","D"]
    
-}]
+}
+]
 
 },
 {
@@ -127,7 +128,7 @@ const data=[{
     edit_icon:<BsThreeDotsVertical/>,
     "title":[{
          
-      "name":"Filter",
+      "name":"Process Diagram",
       "input":"channel",
       "type":"dropdown",
       "options":["Type(or)Select","A","B","C","D"]
@@ -141,7 +142,7 @@ const data=[{
     icon:<GiTransform/> ,
     edit_icon:<BsThreeDotsVertical/>,
     "title":[{   
-      "name":"Filter",
+      "name":"Trigger Form[TBD]",
       "input":"channel",
       "type":"dropdown",
       "options":["Type(or)Select","A","B","C","D"]

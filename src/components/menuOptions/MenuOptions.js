@@ -9,7 +9,7 @@ const MenuOptions = () => {
   <div>{MenuIcons.map((ele,i)=>{
     return (
         <>
-        <div className='menu-icons' key={i}>{ele.icon}</div>
+        <div className='menu-icons'key={i}>{ele.icon}</div>
         </>
     )
   })}

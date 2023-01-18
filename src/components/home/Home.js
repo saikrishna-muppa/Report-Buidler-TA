@@ -1,7 +1,6 @@
 import React from 'react'
 import DragDrop from "../DragDrop"
 import MenuOptions from '../menuOptions/MenuOptions'
-import Tabs from '../Tabs'
 import "./Home.scss"
 const Home = () => {
     return (

@@ -1,18 +1,17 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import BarChart from "./dropDown/BarChart";
-import Chart from "./dropDown/Chart";
-import VictoryZoomChart from "./dropDown/VictoryZoomChart";
+import BarChart from "../dropDown/BarChart";
+import Chart from "../dropDown/Chart";
 import "./Tabs.scss";
-import PopUpOption from "./header/PopUpOption";
-import Popup from 'reactjs-popup';
-import Table from "./table/Table";
+import PopUpOption from "../header/PopUpOption";
+import Table from "../table/Table";
+
 const contentStyle = {
   maxWidth: "600px",
-  width: "90%"
+  width: "90%",
 };
 
-function Tabs({ id, value, icon, title,edit_icon }) {
+function Tabs({ id, value, icon, title, edit_icon,from }) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "image",
     item: {
@@ -22,8 +21,6 @@ function Tabs({ id, value, icon, title,edit_icon }) {
       isDragging: !!monitor.isDragging(),
     }),
   }));
-
-
 
   const typeOptions = (type, data) => {
     switch (type) {
@@ -50,60 +47,61 @@ function Tabs({ id, value, icon, title,edit_icon }) {
           );
         });
         break;
-        case "grid":
-          return data.map((ele)=>{
-            return(
-              <>
-            <h2>{ele.name}</h2>
-              <span>{ele.edit_icon}</span>
-              {ele.options.map((val)=>{
-                return(
-                  <> 
-                  <div className="grid">{val}</div>
-                  </>
-                )
-              })}
-              </>
-            )
-          })
-
-
-      case "chart":
-        return data.map((ele) => {
+      case "grid":
+        return data.map((ele, i) => {
           return (
             <>
-             <h2>{ele.name}</h2>
+              <h2>{ele.name}</h2>
+              <span>{ele.edit_icon}</span>
+              {ele.options.map((val) => {
+                return (
+                  <>
+                    <div className="grid" key={i}>
+                      {val}
+                    </div>
+                  </>
+                );
+              })}
+            </>
+          );
+        });
+
+      case "chart":
+        return data.map((ele, i) => {
+          return (
+            <>
+              <h2 key={i}>{ele.name}</h2>
               <Chart />
             </>
           );
         });
         break;
       case "Barchart":
-        return data.map((ele) => {
+        return data.map((ele, i) => {
           return (
             <>
-             <h2>{ele.name}</h2>
-              <BarChart/>
+              <h2 key={i}>{ele.name}</h2>
+              <BarChart />
             </>
           );
         });
         break;
-        case "Table":
-          return data.map((ele) => {
-            return (
-              <>
-                  <h2>{ele.name}</h2>
-              <Table/>
-              </>
-            );
-          });
-          break;
+      case "Table":
+        return data.map((ele, i) => {
+          return (
+            <>
+              <h2 key={i}>{ele.name}</h2>
+              <Table />
+            </>
+          );
+        });
+        break;
     }
   };
+
   return (
     <>
-    
-      <div className="tab-details" ref={drag}>
+      <div id={"tab" + id} style={{maxWidth:"700px"}} className="tab-details" ref={from?null:drag}>
         <div
           className="tab"
           style={{
@@ -111,7 +109,14 @@ function Tabs({ id, value, icon, title,edit_icon }) {
           }}
         >
           <span className="tab-icon">{icon} </span>
-          {value} <span className="edit-icon"><PopUpOption edit_icon={edit_icon} value={value != "undefined"&&value}/></span>
+          {value}
+          <span className="edit-icon">
+            <PopUpOption
+              edit_icon={edit_icon}
+              value={value}
+              id={id}
+            />
+          </span>
           {typeof title != "undefined" &&
             title.length &&
             title.map((ele) => {

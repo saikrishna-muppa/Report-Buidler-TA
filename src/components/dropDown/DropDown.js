@@ -1,7 +1,5 @@
 import { MultilevelMenu } from "react-multilevel-menu";
 import {AiOutlineDown,AiOutlineSearch} from "react-icons/ai";
-import { MdMailOutline, MdLockOutline } from "react-icons/md";
-// import Datetime from "react-datetime";
 import "./dropDown.scss"
 export default function DropDown() {
   const list = [
@@ -83,7 +81,7 @@ export default function DropDown() {
     classname: "my-custom-class",
     listBackgroundColor: `white`,
     fontColor: `rgb(8, 54, 71)`,
-    selectedListFontColor: `red`,
+    selectedListFontColor: `none`,
     highlightOnSelect: true,
     height:"100%"
   };
